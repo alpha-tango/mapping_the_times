@@ -4,13 +4,15 @@ require 'sinatra/reloader'
 require 'rest-client'
 require 'json'
 require 'dotenv'
-require 'csv'
 
 Dotenv.load
 
 
 
 get '/' do
-
-  erb :index
+  jfun = File.read('countrydata.json')
+  @data = JSON.parse(jfun)
+  send_file File.join('public' 'index.html')
 end
+
+set :public_folder, settings.root + '/tests'
