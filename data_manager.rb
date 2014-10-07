@@ -26,5 +26,6 @@ while n < 11
 end
 
 File.open("countrydata.json", "w") do |f|
+  f.write("var articleCounts = ")
   f.write(@data.to_json)
 end
