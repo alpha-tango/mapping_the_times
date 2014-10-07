@@ -25,7 +25,7 @@ while n < 11
   n+=1
 end
 
-File.open("countrydata.json", "w") do |f|
+File.open("public/src/article_counts.js", "w") do |f|
   f.write("var articleCounts = ")
   f.write(@data.to_json)
 end
